@@ -62,6 +62,7 @@ sudo apt-get update -y --quiet
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends install \
 	astyle \
 	build-essential \
+	ca-certificates \
 	cmake \
 	cppcheck \
 	file \
@@ -69,10 +70,13 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends i
 	gcc \
 	gdb \
 	git \
+	gnupg \
+	gosu \
 	lcov \
 	libssl-dev \
 	libxml2-dev \
 	libxml2-utils \
+	lsb-release \
 	make \
 	ninja-build \
 	python3 \
@@ -82,7 +86,10 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y --quiet --no-install-recommends i
 	python3-wheel \
 	rsync \
 	shellcheck \
+	software-properties-common \
+	sudo \
 	unzip \
+	wget \
 	zip \
 	;
 
