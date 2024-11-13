@@ -17,16 +17,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [ubuntu22, ubuntu24]
-    runs-on: [runs-on,runner=8cpu-linux-x64,"image=${{ matrix.version }}-full-x64","run-id=${{ github.run_id }}"]
+        version: ['ubuntu:22.04', 'ubuntu:24.04']
+    runs-on: [runs-on,runner=8cpu-linux-x64,"image=ubuntu24-full-x64","run-id=${{ github.run_id }}"]
+    container:
+      image: ${{ matrix.version }}
     steps:
 
       - uses: actions/checkout@v4
 
-      - name: Install Dependencies
+      - name: Install Dependencies and Make Quick Check
         run: |
           ./Tools/setup/ubuntu.sh
-
-      - name: Make Quick Check
-        run: |
           make quick_check
